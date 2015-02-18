@@ -1,0 +1,63 @@
+.download-cont {
+	background: #252525;
+	padding: 35px 5px;
+}
+
+.download-int {
+	.asection, .bsection {
+		height: 125px;
+	}
+
+	.asection {
+		@include span-columns(7 of 12);
+	}
+
+	.bsection {
+		@include span-columns(5 of 12);
+		@include omega;
+		text-align: right;
+	}
+
+	img {
+		float: left;
+		margin-right: 35px;
+	}
+
+	h3 {
+		color: #fff;
+		font-size: 20pt;
+		font-weight: 200;
+		line-height: 28pt;
+		margin: 20px 0 0 0;
+		
+	}
+
+	.appstore {
+		margin-top: (125px - 70) / 2;
+	}
+}
+
+@include media(max-width 860px) {
+	.download-int {
+		h3 {
+			font-size: 16pt;
+			line-height: 22pt;
+		}
+	}
+}
+
+@include media(max-width 680px) {
+	.download-int {
+		.asection, .bsection {
+			@include span-columns(12 of 12);
+			@include omega;
+			text-align: center;
+			height: auto;
+		}
+
+		img {
+			float: none;
+			margin-right: 0;
+		}
+	}
+}

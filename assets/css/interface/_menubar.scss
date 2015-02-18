@@ -1,0 +1,95 @@
+.menubar {
+	background: #dcdcdc;
+	box-shadow: 0 0 30px rgba(0, 0, 0, 0.75);
+	height: $menubar-height;
+	opacity: 0.95;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 100%;
+	z-index: 100;
+
+	* {
+		@include user-select(none);
+		cursor: default;
+	}
+
+	span {
+		font-family: $default-font;
+		font-size: 11pt;
+	}
+
+	img, span {
+		vertical-align: middle;
+	}
+
+	.date span {
+		font-weight: 500;
+		text-shadow: 0 1px 0px #fff;
+	}
+
+	.date span, .user span, .breaking span {
+		display: inline-block;
+		margin-bottom: 2px;
+	}
+
+	.bold {
+		font-weight: 600;
+	}
+
+	.icon.robocat {
+		margin-left: 12px;
+	}
+
+	.icon {
+		height: $menubar-height;
+		width: $menubar-height + 8px;
+		margin: 0 1px;
+	}
+
+	.pressed {
+		background: rgba(1, 98, 207, 0.9);
+	}
+
+	div span {
+		margin: 0 6px;
+	}
+
+	.icon.notificationcenter {
+		margin-right: 12px;
+	}
+
+	.left, .right {
+		div, a {
+			display: block;
+			height: $menubar-height;
+			text-align: center;
+		}
+
+		div {
+			line-height: $menubar-height;
+		}
+	}
+
+	.left {
+		float: left;
+
+		div, a {
+			float: left;
+		}
+	}
+
+	.right {
+		float: right;
+
+		div, a {
+			float: left;
+		}
+	}
+}
+
+@include media(max-width 1080px) {
+	.menubar {
+		display: none;
+	}
+}

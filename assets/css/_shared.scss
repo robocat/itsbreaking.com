@@ -1,0 +1,45 @@
+h1, h2, h3, h4, p, li, a, span {
+	font-family: $default-font;
+	font-weight: $default-weight;
+}
+
+h1 {
+	font-weight: 500;
+}
+
+img {
+	max-width:100% !important;
+	height:auto;
+    display:inline-block;
+}
+
+
+.hidden {
+	display: none;
+}
+
+.clear {
+	clear: both;
+}
+
+.cont {
+	width: 100%;
+}
+
+.int {
+	@include outer-container;
+}
+
+.appstore {
+	background-repeat: no-repeat;
+	color: transparent;
+	display: inline-block;
+	height: 70px;
+	width: 247px;
+	@include retina-image("appstore", 247px 70px);
+	@include transition(all 0.3s ease-in-out);
+}
+
+.appstore-hover, .appstore:hover {
+	@include retina-image("appstore-hover", 247px 70px);
+}

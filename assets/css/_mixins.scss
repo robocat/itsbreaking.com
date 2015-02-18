@@ -1,0 +1,10 @@
+@include keyframes(slideIn) {
+	from {
+		box-shadow: none;
+		right: -$sidebar-width;
+	}
+	to {
+		box-shadow: 0 0 30px rgba(0, 0, 0, 0.75);
+		right: 0;
+	}
+}

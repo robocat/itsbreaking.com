@@ -1,0 +1,30 @@
+$asset-pipeline: true;
+$max-width: 1020px;
+
+@import "normalize";
+@import "bourbon";
+@import "neat";
+
+// Shared variables
+$default-font: "Helvetica Neue", Helvetica, sans-serif;
+$luicida: "Luicida Grande", Helvetica, sans-serif;
+$default-weight: 300;
+
+$menubar-height: 22px;
+$header-height: 900px;
+$sidebar-width: 320px;
+
+// Shared
+@import "shared";
+@import "mixins";
+
+// Interface
+@import "interface/menubar";
+@import "interface/sidebar";
+
+// Sections
+@import "sections/header";
+@import "sections/app";
+@import "sections/features";
+@import "sections/download";
+@import "sections/footer";

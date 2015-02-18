@@ -1,0 +1,117 @@
+.app-int {
+	margin-top: 80px;
+	padding: 0 5px;
+	z-index: 60;
+	position: relative;
+
+	h2 {
+		color: #252525;
+		font-size: 22pt;
+		margin-top: 40px;
+	}
+
+	p {
+		color: #252525;
+		font-size: 13pt;
+		line-height: 23pt;
+		margin-bottom: 40px;
+	}
+
+	.info {
+		@include span-columns(7 of 12);
+	}
+
+	.today {
+		position: absolute;
+		right: -70px;
+		top: 0;
+	}
+
+	.interface {
+		box-shadow: 0 10px 50px rgba(0, 0, 0, 0.45);
+		margin: 40px 0 -33px -70px;
+	}
+
+	.arrow {
+		position: absolute;
+
+		right: 80px;
+		top: 400px;
+	}
+
+	.images {
+		text-align: center;
+		@include span-columns(5 of 12);
+		@include omega;
+	}
+
+	.today-iphone {
+		display: none;
+	}
+}
+
+@include media(max-width 1080px) {
+	.app-int {
+		h2 br {
+			display: none;
+		}
+	}
+}
+
+@include media(max-width 700px) {
+	.app-int {
+		.info {
+			@include span-columns(12 of 12);
+			@include omega;
+		}
+
+		.today-iphone {
+			display: block;
+			width: 300px;
+			margin: 0 auto 40px auto;
+		}
+
+		.today, .arrow {
+			display: none;
+		}
+
+		.images {
+			display: none;
+		}
+
+		.interface {
+			display: block;
+			float: none;
+			margin: 0 auto;
+			margin-bottom: -33px;
+			text-align: center;
+		}
+	}
+}
+
+@include media(max-width 420px) {
+	.app-int {
+		margin-top: 20px;
+
+		h2 {
+			font-size: 18pt;
+		}
+
+		p {
+			font-size: 12pt;
+			line-height: 22pt;
+			margin-bottom: 20px;
+		}
+
+		
+
+		.today-iphone {
+			margin-bottom: 20px;
+			width: 220px;
+		}
+
+		.interface {
+			display: none;
+		}
+	}
+}

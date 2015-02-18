@@ -1,0 +1,143 @@
+.sidebar {
+	@include animation(slideIn 0.4s ease 1 forwards);
+	@include animation-delay(1s);
+	background: rgba(0, 0, 0, 0.65);
+	color: #fff;
+	display: none;
+	height: $header-height;
+	overflow: hidden;
+	position: absolute;
+	right: -$sidebar-width;
+	top: 0;
+	width: $sidebar-width;
+	z-index: 50;
+
+	* {
+		@include user-select(none);
+		cursor: default;
+	}
+
+	.tabs {
+		$tab-height: 21px;
+
+		background: #666;
+		border-radius: 5px;
+		color: #fff;
+		font-size: 10pt;
+		height: $tab-height;
+		margin-left: 10px;
+		margin-top: $menubar-height + 20px;
+		width: 296px;
+
+		.tab {
+			border-top-left-radius: 5px;
+			border-bottom-left-radius: 5px;
+			float: left;
+			text-align: center;
+			width: 148px;
+
+			&, span {
+				height: $tab-height;
+				line-height: $tab-height;
+			}
+		}
+
+		.selected {
+			background: #b4b4b4;
+			color: #000;
+		}
+	}
+
+	.line {
+		background: #4d4d4d;
+		height: 1px;
+		margin-top: 20px;
+		margin-bottom: 30px;
+		width: 100%;
+	}
+
+	.date {
+		font-size: 26pt;
+		font-weight: 200;
+		line-height: 32pt;
+		margin-left: 35px;
+	}
+
+	.widget-header {
+		background: #252525;
+		color: #a0a0a0;
+		font-family: $luicida;
+		font-weight: 400;
+		font-size: 10pt;
+		height: 24px;
+		line-height: 24px;
+		padding-left: 10px;
+		margin-top: 25px;
+		width: 100%;
+	}
+
+	.article {
+		$article-height: 81px;
+		border-bottom: 1px solid #4d4d4d;
+		color: #fff;
+		display: block;
+		height: $article-height;
+		text-decoration: none;
+		overflow: hidden;
+		position: relative;
+		width: $sidebar-width;
+
+		.time {
+			font-size: 9pt;
+			position: absolute;
+			top: 2px;
+			right: 5px;
+		}
+
+		.feed-icon {
+			height: 16px;
+			margin: 2px 4px 10px 0px;
+			width: 16px;
+		}
+
+		.article-picture {
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: 50% 50%;
+			display: inline-block;
+			float: left;
+			height: $article-height + 1px;
+			margin-top: -2px;
+			margin-right: 4px;
+			width: 50px;
+		}
+
+		.title {
+			font-size: 9pt;
+			font-weight: 500;
+			margin-bottom: 3px;
+			margin-top: 2px;
+			max-width: $sidebar-width - 24 - 10px
+		}
+
+		.excerpt {
+			color: #a7a7a7;
+			display: block;
+			font-size: 9pt;
+			margin: 0 5px 0 0;
+			text-overflow: clip;
+			height: 32px;
+			// overflow: hidden;
+		}
+
+		img {
+			float: left;
+		}
+	}
+}
+
+@include media(max-width 1080px) {
+	.sidebar {
+		display: none;
+	}
+}
