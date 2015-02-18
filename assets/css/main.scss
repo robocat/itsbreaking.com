@@ -24,6 +24,9 @@ $sidebar-width: 320px;
 
 // Sections
 @import "sections/header";
+@import "sections/devices";
+@import "sections/appstore";
+@import "sections/yosemite";
 @import "sections/app";
 @import "sections/features";
 @import "sections/download";

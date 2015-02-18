@@ -68,13 +68,13 @@
 		}
 	}
 
-	.twitter { @include retina-image("twitter", 39px 33px); background-position: 12px center; }
-	.facebook { @include retina-image("facebook", 24px 41px); background-position: 17px center; }
-	.email { @include retina-image("email", 44px 32px); background-position: 7px center; }
+	.twitter { @include retina-image("button-twitter", 39px 33px); background-position: 12px center; }
+	.facebook { @include retina-image("button-facebook", 24px 41px); background-position: 17px center; }
+	.email { @include retina-image("button-email", 44px 32px); background-position: 7px center; }
 
-	.twitter:hover, .twitter-hover { @include retina-image("twitter-hover", 39px 33px); }
-	.facebook:hover, .facebook-hover { @include retina-image("facebook-hover", 24px 41px); }
-	.email:hover, .email-hover { @include retina-image("email-hover", 44px 32px); }
+	.twitter:hover, .twitter-hover { @include retina-image("button-twitter-hover", 39px 33px); }
+	.facebook:hover, .facebook-hover { @include retina-image("button-facebook-hover", 24px 41px); }
+	.email:hover, .email-hover { @include retina-image("button-email-hover", 44px 32px); }
 }
 
 

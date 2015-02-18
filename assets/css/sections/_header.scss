@@ -1,55 +1,28 @@
-.header-cont {
-	background-image: image-url("yosemite.jpg");
-	background-color: #000;
+.header-container {
+	background-image: image-url("header-background.jpg");
 	background-size: cover;
-	display: relative;
-	height: $header-height;
+	background-position: 50% 50%;
+	position: relative;
+
+	.curtain {
+		background-color: #252525;
+		display: block;
+		height: 100%;
+		left: 0;
+		opacity: 0.5;
+		position: absolute;
+		top: 0;
+		@include transition(opacity, 0.5s, ease-in-out);
+		width: 100%;
+
+		&:hover {
+			opacity: 0.3;
+		}
+	}
 }
 
-.header-int {
-	color: #fff;
+.header {
+	padding-top: 300px;
+	padding-bottom: 300px;
 	text-align: center;
-
-	.icon {
-		margin-top: 125px;
-	}
-
-	h1 {
-		font-size: 46pt;
-		font-weight: 300;
-		margin-bottom: 0;
-	}
-
-	h2 {
-		color: #bdbab3;
-		font-size: 24pt;
-		font-weight: 200;
-		line-height: 32pt;
-		margin-top: 15px;
-	}
-}
-
-@include media(max-width 420px) {
-	.header-cont {
-		height: auto;
-	}
-
-	.header-int {
-		padding: 30px 0;
-
-		.icon {
-			margin-top: 0px;
-			width: 220px;
-		}
-
-		h1 {
-			font-size: 32pt;
-			margin-top: 10px;
-		}
-
-		h2 {
-			font-size: 18pt;
-			line-height: 24pt;
-		}
-	}
 }

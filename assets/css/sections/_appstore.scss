@@ -1,0 +1,69 @@
+.appstore-container {
+	background-color: #ededed;
+}
+
+.appstore {
+	padding-top: 125px;
+	padding-bottom: 125px;
+
+	.section {
+		@include span-columns(6 of 12);
+		text-align: center;
+
+		&.ios {
+			@include omega;
+
+			.text {
+				margin-top: 36px;
+			}
+		}
+
+		&.osx {
+			.text {
+				margin-top: 15px;
+			}
+		}
+
+		a {
+			display: inline-block;
+		}
+
+		.download-button {
+			margin-top: 28px;
+		}
+	}
+}
+
+.download-button {
+	background-repeat: no-repeat;
+	display: inline-block;
+	height: 70px;
+	width: 217px;
+	@include transition(all 0.3s ease-in-out);
+
+	&.ios {
+		@include retina-image("download-ios", 217px 70px);
+
+		&:hover {
+			@include retina-image("download-ios-hover", 217px 70px);
+		}
+
+		&.light {
+			@include retina-image("download-ios-light", 217px, 70px);
+		}
+	}
+
+	&.osx {
+		width: 247px;
+
+		@include retina-image("download-osx", 247px 70px);
+
+		&:hover {
+			@include retina-image("download-osx-hover", 247px 70px);
+		}
+
+		&.light {
+			@include retina-image("download-osx-light", 247px, 70px);
+		}
+	}
+}

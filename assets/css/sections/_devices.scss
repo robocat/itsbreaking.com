@@ -1,0 +1,66 @@
+.devices-container {
+	position: relative;
+	overflow: hidden;
+
+	.mac {
+		@include retina-image("mac", 1215px 632px, jpg);
+		height: 632px;
+		left: -600px;
+		bottom: 75px;
+		position: absolute;
+		width: 1215px;
+	}
+
+	.iphone {
+		@include retina-image("iphone-hand", 763px 701px, jpg);
+		height: 701px;
+		right: -190px;
+		bottom: -40px;
+		position: absolute;
+		width: 763px;
+	}
+}
+
+.devices {
+	padding-top: 75px;
+	padding-bottom: 750px;
+	text-align: center;
+
+	h2 {
+		color: #373737;
+		font-size: 48pt;
+		line-height: 52pt;
+	}
+
+	h3 {
+		color: #4d4340;
+		font-size: 22pt;
+		font-weight: light;
+		line-height: 32pt;
+	}
+
+	a {
+		background-position: 0 50%;
+		background-repeat: no-repeat;
+		color: #ff5a1e;
+		display: inline-block;
+		font-size: 16pt;
+		height: 28px;
+		line-height: 28px;
+		padding-left: 34px;
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+
+		&.download {
+			@include retina-image("icon-simple", 28px 28px);
+		}
+
+		&.watch {
+			margin-left: 30px;
+			@include retina-image("button-play-small", 28px 28px);
+		}
+	}
+}
