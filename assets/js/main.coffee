@@ -24,21 +24,29 @@ vimeoReady = (pid) ->
 	fp.api 'play'
 
 vimeoFinished = (pid) ->
-	$("#video-overlay").removeClass 'animate-in'
-	$("#video-overlay").addClass 'animate-out'
+	delay 400, ->
+		hideVideo()
 
 playVideo = ->
-	fp =Froogaloop($("#headervid")[0])
+	fp = Froogaloop($("#headervid")[0])
 	fp.addEvent 'ready', vimeoReady
 	fp.addEvent 'finish', vimeoFinished
 
-startVideo = ->
+showVideo = ->
+	$("#video-overlay").removeClass 'animate-out'
 	$("#video-overlay").addClass 'animate-in'
-	$("#header").addClass 'animate'
+	$("#header").removeClass 'animate-out'
+	$("#header").addClass 'animate-in'
 	delay 600, ->
 		$("#video-container iframe").addClass 'animate'
 		delay 400, ->
 			playVideo()
+
+hideVideo = ->
+	$("#video-overlay").removeClass 'animate-in'
+	$("#video-overlay").addClass 'animate-out'
+	$("#header").removeClass 'animate-in'
+	$("#header").addClass 'animate-out'
 
 $(document).ready ->
 	updateTime()
@@ -46,5 +54,13 @@ $(document).ready ->
 
 	$("#curtain").click (e) ->
 		e.preventDefault()
+		showVideo()
 
-		startVideo()
+	$("#download").click (e) ->
+		e.preventDefault()
+		$("html, body").animate { scrollTop: $('#appstore').offset().top - 50 }, "slow"
+
+	$("#watch").click (e) ->
+		e.preventDefault()
+		$("html, body").animate { scrollTop: 0 }, "slow", "swing", ->
+			showVideo()
