@@ -10,6 +10,11 @@
 		@include span-columns(6 of 12);
 		text-align: center;
 
+		.icon-link:hover {
+			opacity: 0.8;
+		}
+
+
 		&.ios {
 			@include omega;
 
@@ -39,7 +44,7 @@
 	display: inline-block;
 	height: 70px;
 	width: 217px;
-	@include transition(all 0.3s ease-in-out);
+	// @include transition(all 0.3s ease-in-out);
 
 	&.ios {
 		@include retina-image("download-ios", 217px 70px);

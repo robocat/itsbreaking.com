@@ -48,9 +48,30 @@ hideVideo = ->
 	$("#header").removeClass 'animate-in'
 	$("#header").addClass 'animate-out'
 
+animateDevices = ->
+	$iphone = $("#iphone_device")
+	$mac = $("#mac_device")
+
+	return if $mac.hasClass 'animated-in'
+
+	windowHeight = $(window).height()
+	windowOffset = $(window).scrollTop()
+	offset = $mac.offset().top
+
+	if offset < (windowOffset + windowHeight)
+		scrolled = Math.round(((windowOffset + windowHeight - offset) / windowHeight ) * 100)
+		if scrolled > 40
+			$iphone.addClass 'animate-in'
+			$mac.addClass 'animate-in'
+
+$(window).scroll ->
+	animateDevices()
+
 $(document).ready ->
 	updateTime()
 	updateDate()
+	animateDevices()
+	
 
 	$("#curtain").click (e) ->
 		e.preventDefault()

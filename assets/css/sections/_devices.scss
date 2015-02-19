@@ -1,23 +1,59 @@
+@include keyframes(macappear) {
+	from {
+		opacity: 0.4;
+		left: -1215px;
+	}
+    to { 
+    	opacity: 1;
+    	left: -600px;
+    }
+}
+
+@include keyframes(iphoneappear) {
+	from {
+		opacity: 0.4;
+		right: -763px;
+	}
+    to { 
+    	opacity: 1;
+    	right: -190px;
+    }
+}
+
 .devices-container {
 	position: relative;
 	overflow: hidden;
 
+	$animation-speed: 1s;
+
+	.mac, .iphone {
+		@include animation-timing-function(ease-in-out);
+	}
+
 	.mac {
 		@include retina-image("mac", 1215px 632px, jpg);
 		height: 632px;
-		left: -600px;
+		left: -1215px;
 		bottom: 75px;
 		position: absolute;
 		width: 1215px;
+
+		&.animate-in {
+			@include animation(macappear $animation-speed forwards);
+		}
 	}
 
 	.iphone {
 		@include retina-image("iphone-hand", 763px 701px, jpg);
 		height: 701px;
-		right: -190px;
+		right: -763px;
 		bottom: -40px;
 		position: absolute;
 		width: 763px;
+
+		&.animate-in {
+			@include animation(iphoneappear $animation-speed forwards);
+		}
 	}
 }
 

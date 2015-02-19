@@ -2,7 +2,7 @@ s3_id: <%= ENV['ROBOCAT_DEPLOY_AWS_S3_ACCESS_KEY_ID'] %>
 s3_secret: <%= ENV['ROBOCAT_DEPLOY_AWS_S3_SECRET_ACCESS_KEY'] %>
 s3_bucket: itsbreaking.com
 
-cloudfront_distribution_id: <%= ENV['BREAKING_CF_DIST_ID']
+cloudfront_distribution_id: <%= ENV['BREAKING_CF_DIST_ID']  %>
 
 site: public
 
