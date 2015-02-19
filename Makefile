@@ -19,6 +19,9 @@ deploy:
 	gulp release \
 	&& s3_website push
 
+release:
+	gulp release
+
 build:
 	gulp cleanbuild
 
