@@ -15,6 +15,10 @@ update:
 	npm update
 	&& bundle update
 
+deploy:
+	gulp release \
+	&& s3_website push
+
 build:
 	gulp cleanbuild
 
