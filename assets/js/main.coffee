@@ -18,6 +18,33 @@ updateDate = ->
 	$("#date-month").html(today.format("MMMM"))
 	$("#date-tense").html(ordinalSuffix(today.format("DD")))
 
+vimeoReady = (pid) ->
+	fp = Froogaloop(pid)
+	fp.addEvent('finish', vimeoFinished)
+	fp.api 'play'
+
+vimeoFinished = (pid) ->
+	$("#video-overlay").removeClass 'animate-in'
+	$("#video-overlay").addClass 'animate-out'
+
+playVideo = ->
+	fp =Froogaloop($("#headervid")[0])
+	fp.addEvent 'ready', vimeoReady
+	fp.addEvent 'finish', vimeoFinished
+
+startVideo = ->
+	$("#video-overlay").addClass 'animate-in'
+	$("#header").addClass 'animate'
+	delay 600, ->
+		$("#video-container iframe").addClass 'animate'
+		delay 400, ->
+			playVideo()
+
 $(document).ready ->
 	updateTime()
 	updateDate()
+
+	$("#curtain").click (e) ->
+		e.preventDefault()
+
+		startVideo()

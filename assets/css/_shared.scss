@@ -30,16 +30,19 @@ img {
 	@include outer-container;
 }
 
-// .appstore {
-// 	background-repeat: no-repeat;
-// 	color: transparent;
-// 	display: inline-block;
-// 	height: 70px;
-// 	width: 247px;
-// 	@include retina-image("download-osx-light", 247px 70px);
-// 	@include transition(all 0.3s ease-in-out);
-// }
+@include keyframes(slidein) {
+    to { top: 0; }
+}
 
-// .appstore-hover, .appstore:hover {
-// 	@include retina-image("download-osx-hover", 247px 70px);
-// }
+@include keyframes(slideout) {
+	from { top: 0; }
+    to { top: -100%; }
+}
+
+@include keyframes(fadeout) {
+    to { opacity: 0; }
+}
+
+@include keyframes(fadein) {
+    to { opacity: 1; }
+}

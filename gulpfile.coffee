@@ -118,6 +118,7 @@ gulp.task 'html', ->
 		partials:{
 			header: readPartial('header'),
 			footer: readPartial('footer'),
+			reload: ""
 		},
 		helpers: {
 			img: (path, retina = true, cls = null) ->

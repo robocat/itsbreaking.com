@@ -1,9 +1,16 @@
 {{> header }}
 
 <div class="header-container cont">
-	<a href="" class="curtain"></a>
-	<div class="header int">
-		<h1>What If</h1>
+	<div class="video-overlay" id="video-overlay">
+		<div class="video-container" id="video-container">
+			<iframe id="headervid" src="//player.vimeo.com/video/119559804?api=1&color=fee26d&title=0&byline=0&portrait=0" width="1080" height="608" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+		</div>
+	</div>
+	<a href="" class="curtain" id="curtain"></a>
+	<div class="header int" id="header">
+		{{{ img "what-if.png" }}}
+		<span>&nbsp;</span>
+		{{{ img "button-play.png" }}}
 	</div>
 </div>
 

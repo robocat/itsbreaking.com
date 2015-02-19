@@ -14,15 +14,69 @@
 		top: 0;
 		@include transition(opacity, 0.5s, ease-in-out);
 		width: 100%;
+		z-index: 15;
 
 		&:hover {
 			opacity: 0.3;
 		}
 	}
+
+	&:hover {
+		img {
+			opacity: 0.7;
+		}
+	}
+
+	.video-overlay {
+		background-color: #000;
+		display: block;
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: -100%;
+		width: 100%;
+		z-index: 16;
+
+		@include animation-timing-function(ease);
+		
+
+		&.animate-in {
+			@include animation(slidein 1s forwards);
+		}
+
+		&.animate-out {
+			@include animation(slideout 1s forwards);
+		}
+	}
+}
+
+.video-container {
+	@include outer-container;
+
+	iframe {
+		margin-top: 40px;
+		max-width: 100%;
+		opacity: 0;
+
+		&.animate {
+			@include animation(fadein 0.6s forwards);
+			@include animation-timing-function(ease);
+		}
+	}
 }
 
 .header {
-	padding-top: 300px;
+	opacity: 1;
+	position: relative;
 	padding-bottom: 300px;
+	padding-top: 300px;
+	pointer-events:none;
 	text-align: center;
+	z-index: 20;
+
+
+	&.animate {
+		@include animation(fadeout 0.6s forwards);
+		@include animation-timing-function(ease);
+	}
 }
