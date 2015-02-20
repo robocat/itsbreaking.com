@@ -1,35 +1,49 @@
 .download-cont {
-	background: #252525;
-	padding: 35px 5px;
+	background: #2d2b27;
+	padding: 35px 5px 45px 5px;
 }
 
 .download-int {
-	.asection, .bsection {
-		height: 125px;
-	}
+	text-align: center;
+	
+	.section {
+		@include span-columns(4 of 12);
+		text-align: center;
+		height: 170px;
 
-	.asection {
-		@include span-columns(7 of 12);
+		line-height: 170px;
+
+
+		a, img {
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+		img {
+			height: 110px;
+			width: auto;
+		}
 	}
 
 	.bsection {
-		@include span-columns(5 of 12);
-		@include omega;
-		text-align: right;
-	}
+		.osx { margin-right: 10px; }
+		.ios { margin-left: 10px; }
 
-	img {
-		float: left;
-		margin-right: 35px;
+		a:hover {
+			opacity: 0.8;
+		}
+	}
+	
+	.csection {
+		@include omega;
 	}
 
 	h3 {
 		color: #fff;
 		font-size: 20pt;
 		font-weight: 200;
-		line-height: 28pt;
-		margin: 20px 0 0 0;
-		
+		line-height: 20pt;
+		margin: 0px 0 20px 0;
 	}
 
 	.appstore {

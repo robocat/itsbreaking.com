@@ -10,11 +10,24 @@
 }
 
 .yosemite-int {
-	text-align: center;
-	
-	.interface {
-		margin-top: 150px;
-		margin-right: 100px;
+	text-align: left;
+
+	h3, p {
+		max-width: 764px;
+	}
+
+	h3 {
+		color: #fee26d;
+		font-size: 32pt;
+		font-weight: 200;
+		margin-top: 100px;
+		margin-bottom: 30px;
+	}
+
+	p {
+		color: #fff;
+		font-size: 16pt;
+		margin-bottom: 40px;
 	}
 }
 
@@ -25,20 +38,5 @@
 
 	.yosemite-int {
 		padding: 30px 0;
-
-		.icon {
-			margin-top: 0px;
-			width: 220px;
-		}
-
-		h1 {
-			font-size: 32pt;
-			margin-top: 10px;
-		}
-
-		h2 {
-			font-size: 18pt;
-			line-height: 24pt;
-		}
 	}
 }

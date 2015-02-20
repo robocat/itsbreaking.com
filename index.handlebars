@@ -1,13 +1,13 @@
 {{> header }}
 
 <div class="header-container cont">
-	<div class="video-overlay" id="video-overlay">
+	<div class="video-overlay" id="video-overlay" data-animation-state="out">
 		<div class="video-container" id="video-container">
-			<iframe id="headervid" src="//player.vimeo.com/video/119559804?api=1&player_id=headervid&color=fee26d&title=0&byline=0&portrait=0" data-animation-state="in" width="1080" height="608" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+			<iframe id="headervid" src="//player.vimeo.com/video/119559804?api=1&player_id=headervid&color=fee26d&title=0&byline=0&portrait=0" width="1080" height="608" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen data-animation-state="out"></iframe>
 		</div>
 	</div>
 	<a href="" class="curtain" id="curtain"></a>
-	<div class="header int" id="header">
+	<div class="header int" id="header" data-animation-state="in">
 		{{{ img "what-if.png" }}}
 		<span>&nbsp;</span>
 		{{{ img "button-play.png" }}}
@@ -50,6 +50,8 @@
 
 <div class="yosemite-cont cont">
 	<div class="yosemite-int int">
+		<h3>Breaking let’s you add <br>news feeds to your Today tab</h3>
+		<p>Add local news, your favorite blogs or anything else that comes with a feed as a Today tab widget in OS X Yosemite &amp; iOS 8. Breaking is an easy, uncluttered way of staying on top of what’s new in your world.</p>
 		{{{ img "interface-osx.png" true "interface" }}}
 	</div>
 
@@ -154,33 +156,41 @@
 
 <div class="download-cont cont">
 	<div class="download-int int">
-		<div class="asection">
-			<img src="http://cdn.getforge.com/itsbreaking.com/1417698046/assets/images/breaking-icon-small.png" data-at2x="http://cdn.getforge.com/itsbreaking.com/1417698046/assets/images/breaking-icon-small_2x.png">
-			<h3>Start scanning the news.<br> Get Breaking on the App Store.</h3>
-			<div class="clear"></div>
+		<h3>Start scanning the news</h3>
+
+		<div class="section asection">
+			<a href="https://itunes.apple.com/us/app/breaking-news-in-your-today/id940103986?ls=1&mt=8" title="Download Breaking for Mac on the Mac App Store" class="download-button osx light"></a>
 		</div>
-		<div class="bsection">
-			<a href="https://itunes.apple.com/us/app/breaking-news-in-your-today/id940103986?ls=1&mt=8" title="Download on the Mac App Store" class="button-appstore osx">Download on the Mac App Store</a>
+		<div class="section bsection">
+			<a href="https://itunes.apple.com/us/app/breaking-news-in-your-today/id940103986?ls=1&mt=8" title="Download Breaking for Mac on the Mac App Store" class="osx">
+				{{{ img 'icon-osx.png' }}}
+			</a>
+			<a href="https://itunes.apple.com/us/app/breaking-news-in-your-today/id953959186?ls=1&mt=8" title="Download for iOS on the App Store" class="ios">
+				{{{ img 'icon-ios.png' }}}
+			</a>
+			
+		</div>
+		<div class="section csection">
+			<a href="https://itunes.apple.com/us/app/breaking-news-in-your-today/id953959186?ls=1&mt=8" title="Download for iOS on the App Store" class="download-button ios light"></a>
 		</div>
 	</div>
 </div>
 
 <div class="footer-cont cont">
 	<div class="footer-int int">
-		<div class="asection">
-			<a href="http://robo.cat/" class="robocat">
-			{{{ img "robocat-logo.png" }}}
-			</a>
-			<h4>Made by Robocat</h4>
-			<p>Breaking is designed and developed<br>by a small team from Denmark called <a href="http://robo.cat">Robocat</a>.</p>
-		</div>
-		<div class="bsection">
+		<p>Made by Robocat <a href="http://robo.cat/" class="robocat">{{{ img "robocat-logo.png" }}}</a> in Copenhagen</p>
+		<div class="actions">
+			<span class="hidden robocat-hover"></span>
 			<span class="hidden twitter-hover"></span>
 			<span class="hidden facebook-hover"></span>
 			<span class="hidden email-hover"></span>
+			<span class="hidden press-hover"></span>
+
+			<a href="http://twitter.com/robocat" title="Visit the Robocat website" class="button robocat">About us</a>
 			<a href="http://twitter.com/robocat" title="Robocat on Twitter" class="button twitter">Twitter</a>
 			<a href="http://facebook.com/robocat" title="Robocat on Facebook" class="button facebook">Facebook</a>
 			<a href="mailto:hello@robo.cat" title="Say Hello with an Email" class="button email">Email</a>
+			<a href="/downloads/presspackage.zip" title="Download the Press Package" class="button press">Press Package</a>
 		</div>
 	</div>
 </div>

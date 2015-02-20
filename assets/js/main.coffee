@@ -24,11 +24,10 @@ updateDate = ->
 
 animateElement = (ele) ->
 	state = ele.data 'animation-state'
-	switch state
-		when null || 'in'
-			hideElement ele
-		else
-			presentElement ele
+	if state == 'in'
+		hideElement ele
+	else if state == 'out'
+		presentElement ele
 
 presentElement = (ele) ->
 	ele.removeClass 'animate-out'
@@ -44,7 +43,7 @@ animateDevices = ->
 	$iphone = $("#iphone_device")
 	$mac = $("#mac_device")
 
-	return if $mac.data 'animation-state' == 'in'
+	return if $mac.data('animation-state') == 'in'
 
 	windowHeight = $(window).height()
 	windowOffset = $(window).scrollTop()
@@ -73,11 +72,12 @@ playVideo = ->
 	fp.addEvent 'finish', vimeoFinished
 
 showVideo = ->
-	animateElement $('#video-overlay')
-	animateElement $('#header')
-	animateElement $('#video-container iframe')
-	delay 1200, ->
-		playVideo()
+	if $('#video-container iframe').data('animation-state') == 'out'
+		animateElement $('#video-overlay')
+		animateElement $('#header')
+		animateElement $('#video-container iframe')
+		delay 1200, ->
+			playVideo()
 
 hideVideo = ->
 	animateElement $('#video-container iframe')
@@ -104,9 +104,9 @@ $(document).ready ->
 
 	$("#download").click (e) ->
 		e.preventDefault()
-		$("html, body").animate { scrollTop: $('#appstore').offset().top - 50 }, "slow"
+		$("html body").animate { scrollTop: $('#appstore').offset().top - 50 }, "slow"
 
 	$("#watch").click (e) ->
 		e.preventDefault()
-		$("html, body").animate { scrollTop: 0 }, "slow", "swing", ->
+		$("html body").animate { scrollTop: 0 }, "slow", "swing", ->
 			showVideo()

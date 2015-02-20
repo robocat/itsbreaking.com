@@ -77,11 +77,11 @@
 
 
 	&.animate-in {
-		@include animation(fadeout 0.4s forwards);
+		@include animation(fadein 0.8s forwards);
 	}
 
 	&.animate-out {
-		@include animation(fadein 0.4s forwards);
+		@include animation(fadeout 0.4s forwards);
 		
 	}
 }

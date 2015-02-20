@@ -3,7 +3,8 @@
 }
 
 .footer-int {
-	padding: 0 5px;
+	padding: 100px 5px;
+	text-align: center;
 
 	.asection, .bsection {
 		@include span-columns(6 of 12);
@@ -14,38 +15,28 @@
 		text-align: right;
 	}
 
-	.robocat {
-		float: left;
-		margin: 0 20px 30px 0;
-		@include transition(opacity 0.2s ease);
-
-		&:hover {
-			opacity: 0.8;
-		}
-	}
-
-	p a {
-		@include transition(all 0.2s ease);
-
-		&:hover {
-			text-decoration: none;
-		}
-	}
-
 	h4, p, a {
 		color: #252525;
 	}
 
-	h4 {
-		font-size: 16pt;
-		font-weight: 400;
-		margin: 0;
-	}
-
 	p {
-		font-size: 12pt;
-		line-height: 18pt;
-		margin-top: 5px;
+		color: #8a8984;
+		font-size: 22pt;
+		line-height: 64px;
+		height: 64px;
+		margin-top: 0px;
+		margin-bottom: 30px;
+		font-style: italic;
+
+		.robocat {
+			margin: 0 20px;
+			display: inline-block;
+			vertical-align: middle;
+
+			&:hover img {
+				opacity: 0.6;
+			}
+		}
 	}
 
 	.button {
@@ -66,15 +57,19 @@
 			background-color: $button-color;
 			color: #fff;
 		}
+
+		&.robocat { @include retina-image("button-robocat", 36px 30px); background-position: 8px center; }
+		&.twitter { @include retina-image("button-twitter", 39px 33px); background-position: 12px center; }
+		&.facebook { @include retina-image("button-facebook", 24px 41px); background-position: 17px center; }
+		&.email { @include retina-image("button-email", 44px 32px); background-position: 7px center; }
+		&.press { @include retina-image("button-press", 35px 39px); background-position: 8px center; }
+
+		&.robocat:hover, &.robocat-hover { @include retina-image("button-robocat-hover", 36px 30px); }
+		&.twitter:hover, &.twitter-hover { @include retina-image("button-twitter-hover", 39px 33px); }
+		&.facebook:hover, &.facebook-hover { @include retina-image("button-facebook-hover", 24px 41px); }
+		&.email:hover, &.email-hover { @include retina-image("button-email-hover", 44px 32px); }
+		&.press:hover, &.press-hover { @include retina-image("button-press-hover", 35px 39px); }
 	}
-
-	.twitter { @include retina-image("button-twitter", 39px 33px); background-position: 12px center; }
-	.facebook { @include retina-image("button-facebook", 24px 41px); background-position: 17px center; }
-	.email { @include retina-image("button-email", 44px 32px); background-position: 7px center; }
-
-	.twitter:hover, .twitter-hover { @include retina-image("button-twitter-hover", 39px 33px); }
-	.facebook:hover, .facebook-hover { @include retina-image("button-facebook-hover", 24px 41px); }
-	.email:hover, .email-hover { @include retina-image("button-email-hover", 44px 32px); }
 }
 
 

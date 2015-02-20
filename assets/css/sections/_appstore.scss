@@ -49,12 +49,12 @@
 	&.ios {
 		@include retina-image("download-ios", 217px 70px);
 
-		&:hover {
+		&:hover, &.light:hover {
 			@include retina-image("download-ios-hover", 217px 70px);
 		}
 
 		&.light {
-			@include retina-image("download-ios-light", 217px, 70px);
+			@include retina-image("download-ios-light", 217px 70px);
 		}
 	}
 
@@ -63,12 +63,12 @@
 
 		@include retina-image("download-osx", 247px 70px);
 
-		&:hover {
+		&:hover, &.light:hover {
 			@include retina-image("download-osx-hover", 247px 70px);
 		}
 
 		&.light {
-			@include retina-image("download-osx-light", 247px, 70px);
+			@include retina-image("download-osx-light", 247px 70px);
 		}
 	}
 }

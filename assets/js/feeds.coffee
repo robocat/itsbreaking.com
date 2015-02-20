@@ -106,7 +106,7 @@ fetchFeeds = () ->
 	i = 0
 	$(feeds).each () ->
 		source = this
-		console.log "Requesting " + source.title
+		# console.log "Requesting " + source.title
 
 		$.ajax
 			url: source.link
@@ -116,7 +116,7 @@ fetchFeeds = () ->
 				console.log textStatus
 				console.log errorThrown
 			success: (xml) ->
-				console.log "Parsing " + source.title
+				# console.log "Parsing " + source.title
 				parseFeed(xml, source)
 		.always () ->
 			i++
