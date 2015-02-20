@@ -72,3 +72,23 @@
 		}
 	}
 }
+
+@include media(max-width 570px) {
+	.appstore {
+		padding: 50px 5px;
+
+		.section {
+			@include span-columns(12 of 12);
+			@include omega;
+
+			a, a img {
+				display: block;
+				margin: 0 auto;
+			}
+
+			&.osx {
+				margin-bottom: 30px;
+			}
+		}
+	}
+}

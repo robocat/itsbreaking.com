@@ -43,7 +43,7 @@ paths = {
 
 retinaPath = (path) ->
 	comps = path.split('.')
-	"#{comps[0]}@2x.#{comps[1]}"
+	"#{comps[0]}_2x.#{comps[1]}"
 
 onError = (err) ->
 	console.log err
