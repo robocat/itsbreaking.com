@@ -1,5 +1,7 @@
 delay = (ms, func) -> setTimeout func, ms
 
+# == Yosemite interface ==
+
 ordinalSuffix = (number) ->
 	switch number
 		when 1 || 21 || 31 then "st"
@@ -18,6 +20,44 @@ updateDate = ->
 	$("#date-month").html(today.format("MMMM"))
 	$("#date-tense").html(ordinalSuffix(today.format("DD")))
 
+# == Animations ==
+
+animateElement = (ele) ->
+	state = ele.data 'animation-state'
+	switch state
+		when null || 'in'
+			hideElement ele
+		else
+			presentElement ele
+
+presentElement = (ele) ->
+	ele.removeClass 'animate-out'
+	ele.data 'animation-state', 'in'
+	ele.addClass 'animate-in'
+
+hideElement = (ele) ->
+	ele.removeClass 'animate-in'
+	ele.data 'animation-state', 'out'
+	ele.addClass 'animate-out'
+
+animateDevices = ->
+	$iphone = $("#iphone_device")
+	$mac = $("#mac_device")
+
+	return if $mac.data 'animation-state' == 'in'
+
+	windowHeight = $(window).height()
+	windowOffset = $(window).scrollTop()
+	offset = $mac.offset().top
+
+	if offset < (windowOffset + windowHeight)
+		scrolled = Math.round(((windowOffset + windowHeight - offset) / windowHeight ) * 100)
+		if scrolled > 40
+			presentElement $iphone
+			presentElement $mac
+
+# == Vimeo ==
+
 vimeoReady = (pid) ->
 	fp = Froogaloop(pid)
 	fp.addEvent('finish', vimeoFinished)
@@ -33,45 +73,30 @@ playVideo = ->
 	fp.addEvent 'finish', vimeoFinished
 
 showVideo = ->
-	$("#video-overlay").removeClass 'animate-out'
-	$("#video-overlay").addClass 'animate-in'
-	$("#header").removeClass 'animate-out'
-	$("#header").addClass 'animate-in'
-	delay 600, ->
-		$("#video-container iframe").addClass 'animate'
-		delay 400, ->
-			playVideo()
+	animateElement $('#video-overlay')
+	animateElement $('#header')
+	animateElement $('#video-container iframe')
+	delay 1200, ->
+		playVideo()
 
 hideVideo = ->
-	$("#video-overlay").removeClass 'animate-in'
-	$("#video-overlay").addClass 'animate-out'
-	$("#header").removeClass 'animate-in'
-	$("#header").addClass 'animate-out'
-
-animateDevices = ->
-	$iphone = $("#iphone_device")
-	$mac = $("#mac_device")
-
-	return if $mac.hasClass 'animated-in'
-
-	windowHeight = $(window).height()
-	windowOffset = $(window).scrollTop()
-	offset = $mac.offset().top
-
-	if offset < (windowOffset + windowHeight)
-		scrolled = Math.round(((windowOffset + windowHeight - offset) / windowHeight ) * 100)
-		if scrolled > 40
-			$iphone.addClass 'animate-in'
-			$mac.addClass 'animate-in'
+	animateElement $('#video-container iframe')
+	delay 400, ->
+		animateElement $('#video-overlay')
+		delay 400, ->
+			animateElement $('#header')
 
 $(window).scroll ->
 	animateDevices()
 
 $(document).ready ->
+	# == Initial State ==
+
 	updateTime()
 	updateDate()
 	animateDevices()
 	
+	# == Click Handlers ==
 
 	$("#curtain").click (e) ->
 		e.preventDefault()

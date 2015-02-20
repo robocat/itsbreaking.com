@@ -58,10 +58,10 @@
 		max-width: 100%;
 		opacity: 0;
 
-		&.animate {
-			@include animation(fadein 0.6s forwards);
-			@include animation-timing-function(ease);
-		}
+		@include animation-timing-function(ease-in-out);
+
+		&.animate-in { @include animation(fadein 2s forwards); }
+		&.animate-out { @include animation(fadeout 1.2s forwards); }
 	}
 }
 
@@ -77,11 +77,11 @@
 
 
 	&.animate-in {
-		@include animation(fadeout 0.6s forwards);
+		@include animation(fadeout 0.4s forwards);
 	}
 
 	&.animate-out {
-		@include animation(fadein 0.6s forwards);
+		@include animation(fadein 0.4s forwards);
 		
 	}
 }
