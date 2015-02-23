@@ -72,33 +72,26 @@
 	}
 }
 
-
-@include media(max-width 1005px) {
+@include media(max-width 700px) {
 	.footer-int {
-		.asection, .bsection {
-			@include span-columns(12 of 12);
-			@include omega;
-			text-align: center;
+		p {
+			display: block;
+			line-height: 36pt;
 			height: auto;
-		}
 
-		.robocat {
-			float: none;
-			margin-right: none;
+			.robocat {
+				display: block;
+			}
 		}
 	}
 }
 
-@include media(max-width 490px) {
+@include media(max-width 480px) {
 	.footer-int {
-		.bsection {
-			text-align: center;
-		}
+		padding: 30px 5px;
 
 		.button {
 			display: block;
-			margin: 5px auto 0 auto;
-			width: 300px;
 		}
 	}
 }

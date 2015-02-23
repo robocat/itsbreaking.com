@@ -99,6 +99,10 @@
 			@include retina-image("button-play-small", 28px 28px);
 		}
 	}
+
+	br {
+		display: none;
+	}
 }
 
 @include media(max-width 1200px) {
@@ -286,11 +290,28 @@
 				display: none;
 			}
 		}
+
+		a {
+
+		}
 	}
 
 	.devices-container {
 		.mac, .iphone {
 			display: none;
+		}
+	}
+}
+
+@include media(max-width 420px) {
+	.devices {
+		hr {
+			display: inline;
+		}
+
+		a.watch {
+			margin-left: 0;
+			margin-top: 10px;
 		}
 	}
 }

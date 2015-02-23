@@ -32,17 +32,46 @@
 }
 
 @include media(max-width 1150px) {
-	.yosemite .sidebar {
+	.yosemite-int {
+		padding: 0 10px;
+	}
+	#sidebar {
 		display: none;
 	}
 }
 
-@include media(max-width 420px) {
+@include media(max-width 800px) {
 	.yosemite-cont {
 		height: auto;
 	}
 
 	.yosemite-int {
-		padding: 30px 0;
+		padding: 100px 10px;
+
+		h3 {
+			margin-top: 0;
+		}
 	}
 }
+
+@include media(max-width 420px) {
+	.yosemite-int {
+		padding: 60px 10px;
+
+		h3 {
+			br {
+				display: none;
+			}
+		}
+	}
+}
+
+// @include media(max-width 420px) {
+// 	.yosemite-cont {
+// 		height: auto;
+// 	}
+
+// 	.yosemite-int {
+// 		padding: 30px 0;
+// 	}
+// }

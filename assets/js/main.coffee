@@ -55,6 +55,20 @@ animateDevices = ->
 			presentElement $iphone
 			presentElement $mac
 
+animateSideBar = ->
+	$sidebar = $("#sidebar")
+
+	return if $sidebar.data('animation-state') == 'in'
+
+	windowHeight = $(window).height()
+	windowOffset = $(window).scrollTop()
+	offset = $sidebar.offset().top
+
+	if offset < (windowOffset + windowHeight)
+		scrolled = Math.round(((windowOffset + windowHeight - offset) / windowHeight ) * 100)
+		if scrolled >= 100
+			$sidebar.addClass 'appear'
+
 # == Vimeo ==
 
 vimeoReady = (pid) ->
@@ -88,6 +102,7 @@ hideVideo = ->
 
 $(window).scroll ->
 	animateDevices()
+	animateSideBar()
 
 $(document).ready ->
 	# == Initial State ==
@@ -95,6 +110,7 @@ $(document).ready ->
 	updateTime()
 	updateDate()
 	animateDevices()
+	animateSideBar()
 	
 	# == Click Handlers ==
 

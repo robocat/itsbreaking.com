@@ -54,9 +54,23 @@
 @include media(max-width 780px) {
 	.download-int {
 		.bsection {
+			a img {
+				height: 90px;
+			}
+		}
+	}
+}
+
+@include media(max-width 730px) {
+	.download-int {
+		.bsection {
 			a {
-				max-width: 100% !important;
-				height: auto;
+				&.osx { margin-right: 3px; }
+				&.ios { margin-left: 3px; }
+
+				img {
+					height: 80px;
+				}
 			}
 		}
 	}

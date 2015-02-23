@@ -128,7 +128,7 @@ fetchFeeds = () ->
 					$feed.append(a)
 				$("#feed a")[0..6].each () ->
 					$(this).show()
-				$("#sidebar").show()
+				$("#sidebar").addClass 'ready'
 
 $(document).ready ->
 	fetchFeeds()

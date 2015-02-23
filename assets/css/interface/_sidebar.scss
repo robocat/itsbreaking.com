@@ -1,4 +1,9 @@
 .sidebar {
+
+	&.appear {
+		display: block;
+	}
+
 	@include animation(slideIn 0.4s ease 1 forwards);
 	@include animation-delay(1s);
 	background: rgba(0, 0, 0, 0.65);
