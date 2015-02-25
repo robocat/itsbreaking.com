@@ -4,6 +4,13 @@
 	background-position: 50% 50%;
 	position: relative;
 
+	$hover-image: image-url("header-background-hover.jpg");
+
+	&:after {
+		display: none;
+		content: $hover-image;
+	}
+
 	.curtain {
 		background-color: #252525;
 		display: block;
@@ -22,9 +29,11 @@
 	}
 
 	&:hover {
-		img {
-			opacity: 0.7;
-		}
+		background-image: $hover-image;
+
+		// img {
+		// 	opacity: 0.7;
+		// }
 	}
 
 	.video-overlay {

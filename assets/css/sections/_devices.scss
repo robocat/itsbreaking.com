@@ -44,7 +44,7 @@
 	}
 
 	.iphone {
-		@include retina-image("iphone-hand", 763px 701px, jpg);
+		@include retina-image("iphone", 763px 701px, jpg);
 		height: 701px;
 		right: -763px;
 		bottom: -40px;
@@ -100,7 +100,7 @@
 		}
 	}
 
-	br {
+	a + br {
 		display: none;
 	}
 }
@@ -304,9 +304,9 @@
 }
 
 @include media(max-width 420px) {
-	.devices {
-		hr {
-			display: inline;
+	.container .devices {
+		a + br {
+			display: block;
 		}
 
 		a.watch {
