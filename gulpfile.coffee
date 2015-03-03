@@ -7,6 +7,7 @@ gif = require 'gulp-if'
 rename = require 'gulp-rename'
 fs = require 'fs'
 clean = require 'gulp-clean'
+copy = require 'gulp-copy'
 
 handlebars = require 'gulp-compile-handlebars'
 Handlebars = require 'handlebars'
@@ -34,6 +35,7 @@ reload_script = '<script src="//localhost:{{ config.port }}/livereload.js"></scr
 build_path = "./public"
 
 paths = {
+	copyfile: "{downloads/*,favicon.ico,apple-touch-icon.png}",
 	handlebars: "./{**/,}*.handlebars",
 	sass: "assets/css/{**/,}*.{scss,sass}",
 	coffee: "assets/js/**/*.coffee",
@@ -56,6 +58,10 @@ readPartial = (name) ->
 	val = fs.readFileSync path, 'utf8' if isFile path
 
 	val
+
+gulp.task 'copy', ->
+	gulp.src(paths.copyfile)
+		.pipe(copy(build_path))
 
 gulp.task 'clean', (cb) ->
 	gulp.src(build_path)
@@ -147,6 +153,7 @@ gulp.task 'html', ->
 gulp.task 'watch', ->
 	reload.listen(config.port)
 
+	gulp.watch paths.copyfile, ['copy']
 	gulp.watch paths.coffee, ['scripts']
 	gulp.watch paths.js, ['scripts']
 	gulp.watch paths.handlebars, ['html']
@@ -159,7 +166,7 @@ gulp.task 'set-production', ->
 gulp.task 'cleanbuild', ->
 	runSeqeuence 'clean', 'build'
 
-gulp.task 'build', ['html', 'sass', 'scripts', 'images']
+gulp.task 'build', ['html', 'sass', 'scripts', 'images', 'copy']
 gulp.task 'release', ['set-production', 'cleanbuild']
 
 gulp.task 'default', ['cleanbuild', 'watch']
