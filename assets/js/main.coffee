@@ -3,7 +3,7 @@ delay = (ms, func) -> setTimeout func, ms
 # == Yosemite interface ==
 
 ordinalSuffix = (number) ->
-	switch number
+	switch parseInt(number)
 		when 1 || 21 || 31 then "st"
 		when 2 || 22 then "nd"
 		when 3 || 23 then "rd"
@@ -16,7 +16,7 @@ updateTime = ->
 updateDate = ->
 	today = moment()
 	$("#date-weekday").html(today.format("dddd"))
-	$("#date-dayofmonth").html(today.format("DD"))
+	$("#date-dayofmonth").html(today.format("D"))
 	$("#date-month").html(today.format("MMMM"))
 	$("#date-tense").html(ordinalSuffix(today.format("DD")))
 

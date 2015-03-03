@@ -19,7 +19,7 @@
 
 	* {
 		@include user-select(none);
-		cursor: default;
+		// cursor: default;
 	}
 
 	.tabs {
@@ -85,6 +85,7 @@
 		$article-height: 81px;
 		border-bottom: 1px solid #4d4d4d;
 		color: #fff;
+		// cursor: pointer;
 		display: block;
 		height: $article-height;
 		text-decoration: none;
