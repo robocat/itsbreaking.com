@@ -29,6 +29,16 @@
 		font-size: 16pt;
 		margin-bottom: 40px;
 	}
+
+	.interface {
+		opacity: 0;
+		 @include transform(scale(0));
+
+		&.animate-in {
+			// @include animation-timing-function(ease-in-out);
+			@include animation(bounceIn 1.2s forwards);
+		}
+	}
 }
 
 @include media(max-width 1150px) {

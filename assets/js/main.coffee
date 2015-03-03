@@ -69,6 +69,20 @@ animateSideBar = ->
 		if scrolled >= 100
 			$sidebar.addClass 'appear'
 
+animateInterface = ->
+	$interface = $('.yosemite-int .interface');
+
+	return if $interface.data('animation-state') == 'in'
+
+	windowHeight = $(window).height()
+	windowOffset = $(window).scrollTop()
+	offset = $interface.offset().top
+
+	if offset < (windowOffset + windowHeight)
+		scrolled = Math.round(((windowOffset + windowHeight - offset) / windowHeight ) * 100)
+		if scrolled > 40
+			$interface.addClass 'animate-in'
+
 # == Vimeo ==
 
 vimeoReady = (pid) ->
@@ -103,6 +117,7 @@ hideVideo = ->
 $(window).scroll ->
 	animateDevices()
 	animateSideBar()
+	animateInterface()
 
 $(document).ready ->
 	# == Initial State ==
@@ -111,6 +126,7 @@ $(document).ready ->
 	updateDate()
 	animateDevices()
 	animateSideBar()
+	animateInterface()
 	
 	# == Click Handlers ==
 

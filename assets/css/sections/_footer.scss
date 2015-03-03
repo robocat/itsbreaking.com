@@ -62,7 +62,7 @@
 			color: #fff;
 		}
 
-		&.robocat { @include retina-hover("button-robocat", 36px 30px); background-position: 8px center; }
+		&.robocat { @include retina-hover("button-robocat", 36px 40px); background-position: 8px center; }
 		&.twitter { @include retina-hover("button-twitter", 39px 33px); background-position: 12px center; }
 		&.facebook { @include retina-hover("button-facebook", 24px 41px); background-position: 17px center; }
 		&.email { @include retina-hover("button-email", 44px 32px); background-position: 7px center; }
