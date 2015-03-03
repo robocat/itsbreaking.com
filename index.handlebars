@@ -66,7 +66,7 @@
 
 	<div class="menubar">
 		<div class="left">
-			<a href="http://robo.cat" title="Robocat" class="robocat icon">
+			<a href="http://robo.cat" title="Robocat" class="robocat icon" target="_blank">
 				{{{ img "menubar-robocat.png" }}}
 			</a>
 			<div class="breaking">
@@ -198,13 +198,28 @@
 
 <div class="footer-cont cont">
 	<div class="footer-int int">
-		<p>Made by Robocat <a href="http://robo.cat/" class="robocat">{{{ img "robocat-logo.png" }}}</a> in Copenhagen</p>
+		<p>Made by Robocat <a href="http://robo.cat/" class="robocat" onClick="sendEvent('button', 'clicked', 'social-robocat');">{{{ img "robocat-logo.png" }}}</a> in Copenhagen</p>
 		<div class="actions">
-			<a href="//robo.cat" title="Visit the Robocat website" class="button robocat">About us</a>
-			<a href="//twitter.com/robocat" title="Robocat on Twitter" class="button twitter">Twitter</a>
-			<a href="//facebook.com/robocatapps" title="Robocat on Facebook" class="button facebook">Facebook</a>
-			<a href="mailto:hello@robo.cat" title="Say Hello with an Email" class="button email">Email</a>
-			<a href="/downloads/presspackage.zip" title="Download the Press Package" class="button press">Press Package</a>
+			<a href="//robo.cat" 
+				title="Visit the Robocat website" 
+				class="button robocat"
+				onClick="sendEvent('button', 'clicked', 'social-robocat');">About us</a>
+			<a href="//twitter.com/robocat" 
+				title="Robocat on Twitter" 
+				class="button twitter"
+				onClick="sendEvent('button', 'clicked', 'social-twitter');">Twitter</a>
+			<a href="//facebook.com/robocatapps" 
+				title="Robocat on Facebook" 
+				class="button facebook"
+				onClick="sendEvent('button', 'clicked', 'social-facebook');">Facebook</a>
+			<a href="mailto:hello@robo.cat" 
+				title="Say Hello with an Email" 
+				class="button email"
+				onClick="sendEvent('button', 'clicked', 'social-email');">Email</a>
+			<a href="/downloads/presspackage.zip" 
+				title="Download the Press Package" 
+				class="button press"
+				onClick="sendEvent('button', 'clicked', 'presspackage');">Press Package</a>
 		</div>
 	</div>
 </div>

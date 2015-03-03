@@ -91,20 +91,20 @@ animateInterface = ->
 # == Vimeo ==
 
 vimeoReady = (pid) ->
+	sendEvent 'button', 'clicked', 'video-started'
 	fp = Froogaloop(pid)
 	fp.addEvent('finish', vimeoFinished)
 	fp.api 'play'
 
-	sendEvent 'video', 'started'
 
 vimeoFinished = (pid) ->
-	sendEvent 'video', 'played'
+	sendEvent 'button', 'clicked', 'video-finished'
 
 	delay 400, ->
 		hideVideo()
 
 vimeoPaused = (pid) ->
-	sendEvent 'video', 'paused'
+	sendEvent 'button', 'clicked', 'video-paused'
 
 playVideo = ->
 	fp = Froogaloop($("#headervid")[0])
@@ -155,6 +155,6 @@ $(document).ready ->
 
 	$("#watch").click (e) ->
 		e.preventDefault()
-		sendEvent 'button', 'clicked', 'download'
+		sendEvent 'button', 'clicked', 'play'
 		$("html body").animate { scrollTop: 0 }, "slow", "swing", ->
 			showVideo()
