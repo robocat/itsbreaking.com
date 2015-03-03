@@ -1,5 +1,10 @@
 delay = (ms, func) -> setTimeout func, ms
 
+# == Analytics
+
+sendEvent = (category, action, label = "", value = undefined) ->
+	ga('send', 'event', category, action, label, value) #if typeof ga != 'undefined'
+
 # == Yosemite interface ==
 
 ordinalSuffix = (number) ->
@@ -90,13 +95,21 @@ vimeoReady = (pid) ->
 	fp.addEvent('finish', vimeoFinished)
 	fp.api 'play'
 
+	sendEvent 'video', 'started'
+
 vimeoFinished = (pid) ->
+	sendEvent 'video', 'played'
+
 	delay 400, ->
 		hideVideo()
+
+vimeoPaused = (pid) ->
+	sendEvent 'video', 'paused'
 
 playVideo = ->
 	fp = Froogaloop($("#headervid")[0])
 	fp.addEvent 'ready', vimeoReady
+	fp.addEvent 'pause', vimeoPaused
 	fp.addEvent 'finish', vimeoFinished
 
 showVideo = ->
@@ -132,13 +145,16 @@ $(document).ready ->
 
 	$("#curtain").click (e) ->
 		e.preventDefault()
+		sendEvent 'button', 'clicked', 'play'
 		showVideo()
 
 	$("#download").click (e) ->
 		e.preventDefault()
+		sendEvent 'button', 'clicked', 'download'
 		$("html body").animate { scrollTop: $('#appstore').offset().top - 50 }, "slow"
 
 	$("#watch").click (e) ->
 		e.preventDefault()
+		sendEvent 'button', 'clicked', 'download'
 		$("html body").animate { scrollTop: 0 }, "slow", "swing", ->
 			showVideo()

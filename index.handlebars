@@ -31,20 +31,28 @@
 <div class="appstore-container cont">
 	<div class="appstore int" id="appstore">
 		<div class="osx section">
-			<a class="icon-link" href="{{{ osxlink }}}">
+			<a class="icon-link" 
+				href="{{{ osxlink }}}"
+				onClick="sendEvent('button', 'clicked', 'download-osx-icon-top')">
 				{{{ img "icon-osx.png" true "icon" }}}
 				{{{ img "breaking-for-mac.png" true "text" }}}
 			</a>
 
-			<a href="{{{ osxlink }}}" class="download-button osx"></a>
+			<a href="{{{ osxlink }}}" 
+				class="download-button osx"
+				onClick="sendEvent('button', 'clicked', 'download-osx-appstore-top')"></a>
 
 		</div>
 		<div class="ios section">
-			<a class="icon-link" href="{{{ ioslink }}}">
+			<a class="icon-link" 
+				href="{{{ ioslink }}}"
+				onClick="sendEvent('button', 'clicked', 'download-ios-icon-top')">
 				{{{ img "icon-ios.png" true "icon" }}}
 				{{{ img "breaking-for-ios.png" true "text" }}}
 			</a>
-			<a href="{{{ ioslink }}}" class="download-button ios"></a>
+			<a href="{{{ ioslink }}}" 
+				class="download-button ios"
+				onClick="sendEvent('button', 'clicked', 'download-ios-appstore-top')"></a>
 		</div>
 	</div>
 </div>
@@ -159,19 +167,31 @@
 		<h3>Start scanning the news</h3>
 
 		<div class="section asection">
-			<a href="https://itunes.apple.com/us/app/breaking-news-in-your-today/id940103986?ls=1&mt=8" title="Download Breaking for Mac on the Mac App Store" class="download-button osx light"></a>
+			<a href="https://itunes.apple.com/us/app/breaking-news-in-your-today/id940103986?ls=1&mt=8" 
+				title="Download Breaking for Mac on the Mac App Store" 
+				class="download-button osx light"
+				onClick="sendEvent('button', 'clicked', 'download-osx-appstore-bottom')"></a>
 		</div>
 		<div class="section bsection">
-			<a href="https://itunes.apple.com/us/app/breaking-news-in-your-today/id940103986?ls=1&mt=8" title="Download Breaking for Mac on the Mac App Store" class="osx">
+			<a href="https://itunes.apple.com/us/app/breaking-news-in-your-today/id940103986?ls=1&mt=8" 
+				title="Download Breaking for Mac on the Mac App Store" 
+				class="osx"
+				onClick="sendEvent('button', 'clicked', 'download-osx-icon-bottom')">
 				{{{ img 'icon-osx.png' }}}
 			</a>
-			<a href="https://itunes.apple.com/us/app/breaking-news-in-your-today/id953959186?ls=1&mt=8" title="Download for iOS on the App Store" class="ios">
+			<a href="https://itunes.apple.com/us/app/breaking-news-in-your-today/id953959186?ls=1&mt=8" 
+				title="Download for iOS on the App Store" 
+				class="ios"
+				onClick="sendEvent('button', 'clicked', 'download-ios-icon-bottom')">
 				{{{ img 'icon-ios.png' }}}
 			</a>
 			
 		</div>
 		<div class="section csection">
-			<a href="https://itunes.apple.com/us/app/breaking-news-in-your-today/id953959186?ls=1&mt=8" title="Download for iOS on the App Store" class="download-button ios light"></a>
+			<a href="https://itunes.apple.com/us/app/breaking-news-in-your-today/id953959186?ls=1&mt=8" 
+				title="Download for iOS on the App Store" 
+				class="download-button ios light"
+				onClick="sendEvent('button', 'clicked', 'download-ios-appstore-bottom')"></a>
 		</div>
 	</div>
 </div>
