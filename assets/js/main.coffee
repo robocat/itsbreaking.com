@@ -115,6 +115,7 @@ playVideo = ->
 
 showVideo = ->
 	if $('#video-container iframe').data('animation-state') == 'out'
+		$('#header-hover').hide();
 		animateElement $('#video-overlay')
 		animateElement $('#share-container')
 		animateElement $('#header')
@@ -129,6 +130,7 @@ hideVideo = ->
 		delay 400, ->
 			animateElement $('#header')
 			animateElement $('#share-container')
+			$('#header-hover').show();
 
 $(window).scroll ->
 	animateDevices()
@@ -147,7 +149,7 @@ $(document).ready ->
 	
 	# == Click Handlers ==
 
-	$("#curtain").click (e) ->
+	$("#header-hover").click (e) ->
 		e.preventDefault()
 		sendEvent 'button', 'clicked', 'play'
 		showVideo()
