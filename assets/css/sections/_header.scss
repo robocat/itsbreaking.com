@@ -1,15 +1,28 @@
 .header-container {
 	background-image: image-url("header-background.jpg");
-	background-size: cover;
-	background-position: 50% 50%;
+	// cursor: pointer;
 	position: relative;
 	@include transition(all 0.2s ease-in-out);
 
 	$hover-image: image-url("header-background-hover.jpg");
 
-	&:after {
-		display: none;
-		content: $hover-image;
+	&, .hover {
+		background-size: cover;
+		background-position: 50% 50%;
+		background-repeat: no-repeat;
+	}
+
+	.hover {
+		opacity: 0;
+		background-image: $hover-image;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 18;
+		cursor: pointer;
+		@include transition(opacity 0.3s ease-in-out);
 	}
 
 	.curtain {
@@ -17,24 +30,23 @@
 		display: block;
 		height: 100%;
 		left: 0;
-		opacity: 0.5;
+		opacity: 0;
 		position: absolute;
 		top: 0;
 		@include transition(opacity, 0.5s, ease-in-out);
 		width: 100%;
 		z-index: 15;
+		cursor: pointer;
 
-		&:hover {
-			opacity: 0.3;
-		}
+		// &:hover {
+		// 	opacity: 0.3;
+		// }
 	}
 
 	&:hover {
-		background-image: $hover-image;
-
-		// img {
-		// 	opacity: 0.7;
-		// }
+		.hover {
+			opacity: 1;
+		}
 	}
 
 	.video-overlay {
@@ -56,6 +68,79 @@
 
 		&.animate-out {
 			@include animation(slideout 1s forwards);
+		}
+	}
+}
+
+.sharebar-container {
+	background-color: rgba(0, 0, 0, 0.3);
+	bottom: 0;
+	height: 80px;
+	position: absolute;
+	z-index: 25;
+
+	&.animate-in {
+		@include animation(fadein 0.4s forwards);
+	}
+
+	&.animate-out {
+		@include animation(fadeout 0.4s forwards);	
+		pointer-events:none;
+	}
+
+	.sharebar {
+		color: #fff;
+
+		.inner {
+			@include span-columns(10 of 12);
+			@include shift(1);
+		}
+
+		p {
+			display: block;
+			float: left;
+			font-size: 16pt;
+			line-height: 80px;
+			margin: 0;
+		}
+
+		.actions {
+			float: right;
+			line-height: 80px;
+		}
+
+		.button {
+			line-height: 1.2em;
+			background-color: #fee26d;
+			background-position: 11px 50%;
+			background-repeat: no-repeat;
+			color: #383531;
+			display: inline-block;
+			vertical-align: middle;
+			padding: 14px 24px;
+			// height: 46px;
+			// line-height: 46px;
+			// width: 200px;
+			font-weight: 400;
+			text-decoration: none;
+
+			&:hover {
+				background-color: #ff5a1e;
+				color: #fff;
+			}
+
+			&.twitter {
+				@include retina-hover("share-twitter", 22px 19px);
+				background-position: 11px 50%;
+				padding-left: 42px;
+				margin-left: 10px;
+			}
+
+			&.facebook {
+				@include retina-hover("share-facebook", 13px 23px);
+				background-position: 10px 50%;
+				padding-left: 33px;
+			}
 		}
 	}
 }
@@ -91,8 +176,21 @@
 	}
 
 	&.animate-out {
-		@include animation(fadeout 0.4s forwards);
-		
+		@include animation(fadeout 0.4s forwards);	
+	}
+}
+
+@include media(max-width 870px) {
+	.sharebar-container .sharebar {
+		text-align: center;
+
+		p {
+			display: none;
+		}
+
+		.actions {
+			float: none;
+		}
 	}
 }
 
@@ -102,6 +200,29 @@
 
 		.play {
 			margin-top: 30px;
+		}
+	}
+
+	.sharebar-container .sharebar {
+		.inner {
+			width: 100%;
+			margin: 0;
+		}
+	}
+}
+
+@include media(max-width 420px) {
+	.sharebar-container {
+		height: 125px;
+
+		.sharebar .button {
+			display: block;
+			margin: 10px auto;
+			width: 240px;
+
+			&.twitter {
+				margin-left: auto;
+			}
 		}
 	}
 }

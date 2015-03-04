@@ -69,10 +69,11 @@ animateSideBar = ->
 	windowOffset = $(window).scrollTop()
 	offset = $sidebar.offset().top
 
-	if offset < (windowOffset + windowHeight)
+	if offset < (windowOffset + windowHeight) && offset > 0
 		scrolled = Math.round(((windowOffset + windowHeight - offset) / windowHeight ) * 100)
 		if scrolled >= 100
-			$sidebar.addClass 'appear'
+			delay 700, ->
+				$sidebar.addClass 'appear'
 
 animateInterface = ->
 	$interface = $('.yosemite-int .interface');
@@ -115,6 +116,7 @@ playVideo = ->
 showVideo = ->
 	if $('#video-container iframe').data('animation-state') == 'out'
 		animateElement $('#video-overlay')
+		animateElement $('#share-container')
 		animateElement $('#header')
 		animateElement $('#video-container iframe')
 		delay 1200, ->
@@ -126,6 +128,7 @@ hideVideo = ->
 		animateElement $('#video-overlay')
 		delay 400, ->
 			animateElement $('#header')
+			animateElement $('#share-container')
 
 $(window).scroll ->
 	animateDevices()
@@ -138,8 +141,9 @@ $(document).ready ->
 	updateTime()
 	updateDate()
 	animateDevices()
-	animateSideBar()
+	# animateSideBar()
 	animateInterface()
+
 	
 	# == Click Handlers ==
 
