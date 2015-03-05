@@ -164,3 +164,8 @@ $(document).ready ->
 		sendEvent 'button', 'clicked', 'play'
 		$("html body").animate { scrollTop: 0 }, "slow", "swing", ->
 			showVideo()
+
+	$("#fb_share").click (e) ->
+		e.preventDefault()
+		sendEvent 'button', 'clicked', 'share-facebook'
+		FB.ui {method: "share", href: "http://itsbreaking.com/"}
