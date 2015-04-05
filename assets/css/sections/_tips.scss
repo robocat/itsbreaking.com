@@ -2,6 +2,7 @@
 	$pages: 7;
 
 	// width: $pages * 100vw;
+	padding-bottom: 30px;
 
 	.tip {
 		// float: left;
@@ -21,6 +22,7 @@
 		.title {
 			font-weight: 200;
 			margin-top: 0;
+			margin-bottom: 10px;
 		}
 
 		.index {
