@@ -1,0 +1,47 @@
+[
+	{
+		"icon": "tip-dismiss-icon.png",
+		"title": "Swipe Right to Dismiss a Story",
+		"description": "Dismissing stories is a quick way to skip a news item to make room for a new one.",
+		"action": false
+	},
+	{
+		"icon": "tip-share-icon.png",
+		"title": "Long Press to Share a Story",
+		"description": "Long pressing a news item will reveal quick share options for facebook, twitter and the native share sheet.",
+		"action": false
+	},
+	{
+		"icon": "tip-read-icon.png",
+		"title": "Find Read & Dismissed Stories in the ‘Recent’ tab",
+		"description": "Want to find a great story that you read or that one story you accidentally dismissed? Go to the recent tab.",
+		"action": false
+	},
+	{
+		"icon": "tip-amount-icon.png",
+		"title": "Choose the Amount of Stories shown in Settings",
+		"description": "Just want to see a single story? Choose exactly how many stories you want to show in the settings tab.",
+		"action": false
+	},
+	{
+		"icon": "tip-readability-icon.png",
+		"title": "Strip styling and open Stories in Readability",
+		"description": "In the settings tab you can enable readability that opens all stories in a simplified easier to read layout.",
+		"action": false
+	},
+	{
+		"icon": "tip-search-icon.png",
+		"title": "Just Type the Website Name and We’ll Search for the Feed",
+		"description": "No one remembers or can be bothered to find the exact feed url. That’s why Breaking will search any website for the exact feed address.",
+		"action": false
+	},
+	{
+		"icon": "tip-review-icon.png",
+		"title": "Leave a Review",
+		"description": "Breaking is built by indie developers and if you enjoy using the app, we could really use a review from you on the app store. Thanks!",
+		"action": {
+			"text": "Leave a Review",
+			"url": "https://itunes.apple.com/us/app/breaking-news-in-your-today/id953959186?ls=1&mt=8"
+		}
+	}
+]

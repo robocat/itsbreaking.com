@@ -1,0 +1,47 @@
+.tips {
+	$pages: 7;
+
+	width: $pages * 100vw;
+
+	.tip {
+		// float: left;
+		padding: 0 40px;
+		text-align: center;
+		width: 100vw;
+
+		.icon {
+			// margin-bottom: 30px;
+			margin-top: 30px;
+		}
+
+		.title, .index {
+			color: #373737;
+		}
+
+		.title {
+			font-weight: 200;
+			margin-top: 0;
+		}
+
+		.index {
+			text-transform: uppercase;
+			font-weight: bold;
+			font-size: 11pt;
+		}
+
+		.description {
+			color: #4d4340;
+			margin-bottom: 30px;
+		}
+
+		.button {
+			border: 1px solid #ff5a1e;
+			border-radius: 5px;
+			color: #000;
+			display: inline-block;
+			font-size: 14pt;
+			padding: 16px 40px;
+			text-decoration: none;
+		}
+	}
+}

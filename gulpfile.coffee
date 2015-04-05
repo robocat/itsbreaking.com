@@ -118,7 +118,8 @@ gulp.task 'html', ->
 	data = {
 		config: config,
 		ioslink: 'https://itunes.apple.com/us/app/breaking-news-in-your-today/id953959186?ls=1&mt=8',
-		osxlink: 'https://itunes.apple.com/us/app/breaking-news-in-your-today/id940103986?ls=1&mt=12'
+		osxlink: 'https://itunes.apple.com/us/app/breaking-news-in-your-today/id940103986?ls=1&mt=12',
+		tips: require('./tips/data.json')
 	}
 
 	options = {
@@ -137,6 +138,18 @@ gulp.task 'html', ->
 				str += ">"
 
 				return str
+
+			math: (lvalue, op, rvalue, opts) ->
+				lvalue = parseFloat(lvalue)
+				rvalue = parseFloat(rvalue)
+
+				return {
+					"+": lvalue + rvalue,
+					"-": lvalue - rvalue,
+					"*": lvalue * rvalue,
+					"/": lvalue / rvalue,
+					"%": lvalue % rvalue
+				}[op]
 		}
 	}
 
