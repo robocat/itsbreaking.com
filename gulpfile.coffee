@@ -117,8 +117,8 @@ gulp.task 'sass', ->
 gulp.task 'html', ->
 	data = {
 		config: config,
-		ioslink: 'https://itunes.apple.com/us/app/breaking-news-in-your-today/id953959186?ls=1&mt=8',
-		osxlink: 'https://itunes.apple.com/us/app/breaking-news-in-your-today/id940103986?ls=1&mt=12',
+		ioslink: 'https://itunes.apple.com/us/app/breaking-news-in-your-today/id953959186?mt=8&uo=6&at=1l3vtDT&ct=',
+		osxlink: 'https://itunes.apple.com/us/app/breaking-news-in-your-today/id940103986?ls=1&mt=12&uo=6&at=1l3vtDT&ct=',
 		tips: require('./tips/data.json')
 	}
 
