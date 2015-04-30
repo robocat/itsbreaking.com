@@ -1,0 +1,20 @@
+[
+	{
+		"icon": "welcome-step1.png",
+		"title": "Open Today View",
+		"description": "Drag down from the top of your device to open up the Today View.",
+		"action": false
+	},
+	{
+		"icon": "welcome-step2.png",
+		"title": "Tap ‘Edit’",
+		"description": "Scroll to the bottom of the Today View and tap the ‘edit’ button",
+		"action": false
+	},
+	{
+		"icon": "welcome-step3.png",
+		"title": "Add Breaking",
+		"description": "Find Breaking and tap the green plus to add it as a widget in your Today View.",
+		"action": false
+	}
+]

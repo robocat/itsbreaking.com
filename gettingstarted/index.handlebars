@@ -1,0 +1,17 @@
+{{> header }}
+
+<div class="tips">
+	{{#each welcome}}
+		<div class="tip">
+			{{{img this.icon true "icon"}}}
+			<h1 class="title">{{this.title}}</h1>
+			<p class="description">{{this.description}}</p>
+
+			{{#if this.action}}
+				<a href="{{this.action.url}}" class="button action">{{this.action.text}}</a>
+			{{/if}}
+		</div>
+	{{/each}}
+</div>
+
+{{> footer }}

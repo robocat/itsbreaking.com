@@ -119,7 +119,8 @@ gulp.task 'html', ->
 		config: config,
 		ioslink: 'https://itunes.apple.com/us/app/breaking-news-in-your-today/id953959186?mt=8&uo=6&at=1l3vtDT&ct=',
 		osxlink: 'https://itunes.apple.com/us/app/breaking-news-in-your-today/id940103986?ls=1&mt=12&uo=6&at=1l3vtDT&ct=',
-		tips: require('./tips/data.json')
+		tips: require('./tips/data.json'),
+		welcome: require('./gettingstarted/data.json')
 	}
 
 	options = {
