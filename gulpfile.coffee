@@ -35,7 +35,7 @@ reload_script = '<script src="//localhost:{{ config.port }}/livereload.js"></scr
 build_path = "./public"
 
 paths = {
-	copyfile: "{downloads/*,favicon.ico,apple-touch-icon.png,**/*.json}",
+	copyfile: "{downloads/*,favicon.ico,apple-touch-icon.png,app-static/*.json}",
 	handlebars: "./{**/,}*.handlebars",
 	sass: "assets/css/{**/,}*.{scss,sass}",
 	coffee: "assets/js/**/*.coffee",
