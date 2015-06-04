@@ -21,3 +21,6 @@ PLATFORMS
 DEPENDENCIES
   powder
   s3_website
+
+BUNDLED WITH
+   1.10.3

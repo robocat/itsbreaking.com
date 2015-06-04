@@ -1,0 +1,23 @@
+{
+  "http://rss.cnn.com/rss/cnn_topstories.rss": "CNN.com",
+  "http://feeds.macrumors.com/MacRumors-All": "MacRumors",
+  "http://9to5mac.com/feed/": "9to5Mac",
+  "http://feeds.bbci.co.uk/news/rss.xml": "BBC",
+  "http://www.nytimes.com/services/xml/rss/nyt/HomePage.xml": "NY Times",
+  "http://www.theverge.com/rss/full.xml": "The Verge",
+  "http://www.imore.com/feed": "iMore",
+  "http://www.engadget.com/rss.xml": "Engadget",
+  "http://www.macstories.net/feed/": "MacStories",
+  "http://feeds.feedburner.com/foxnews/latest": "FOXNews.com",
+  "http://techcrunch.com/feed/": "TechCrunch",
+  "http://daringfireball.net/feeds/main": "Daring Fireball",
+  "http://rssfeeds.usatoday.com/usatoday-NewsTopStories": "USA TODAY",
+  "http://feeds2.feedburner.com/AppAdvice": "AppAdvice",
+  "http://www.idownloadblog.com/feed/": "iDownloadBlog",
+  "http://feeds.gawker.com/lifehacker/full": "Lifehacker",
+  "http://appleinsider.com/appleinsider.rss": "AppleInsider",
+  "http://www.cultofmac.com/feed/": "Cult of Mac",
+  "http://feeds.gawker.com/gizmodo/full": "Gizmodo",
+  "http://www.theguardian.com/world/rss": "The Guardian",
+  "http://feeds.mashable.com/Mashable": "Mashable"
+}
