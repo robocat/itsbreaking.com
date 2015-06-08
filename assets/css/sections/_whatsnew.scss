@@ -1,0 +1,52 @@
+.whatsnew {
+	padding: 30px 0;
+
+	.version {
+		// float: left;
+		padding: 0 40px;
+		width: 100vw;
+
+		hr {
+			background: #DADADA;
+			border: none;
+			height: 1px;
+			margin-bottom: 40px;
+		}
+
+		.icon {
+			// margin-bottom: 30px;
+			margin-top: 30px;
+		}
+
+		.title, .index {
+			color: #373737;
+		}
+
+		.title {
+			font-weight: 200;
+			margin-top: 0;
+			margin-bottom: 10px;
+		}
+
+		.index {
+			text-transform: uppercase;
+			font-weight: bold;
+			font-size: 11pt;
+		}
+
+		.description {
+			color: #4d4340;
+			margin-bottom: 30px;
+		}
+
+		.button {
+			border: 1px solid #ff5a1e;
+			border-radius: 5px;
+			color: #000;
+			display: inline-block;
+			font-size: 14pt;
+			padding: 16px 40px;
+			text-decoration: none;
+		}
+	}
+}

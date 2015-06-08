@@ -1,0 +1,13 @@
+{{> header }}
+
+<div class="whatsnew">
+	{{#each whatsnew}}
+		<div class="version">
+			<h2 class="title">Version {{this.version}}</h2>
+			<p class="description">{{{this.description}}}</p>
+			<hr>
+		</div>
+	{{/each}}
+</div>
+
+{{> footer }}

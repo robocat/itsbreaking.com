@@ -120,7 +120,8 @@ gulp.task 'html', ->
 		ioslink: 'https://itunes.apple.com/us/app/breaking-news-in-your-today/id953959186?mt=8&uo=6&at=1l3vtDT&ct=',
 		osxlink: 'https://itunes.apple.com/us/app/breaking-news-in-your-today/id940103986?ls=1&mt=12&uo=6&at=1l3vtDT&ct=',
 		tips: require('./tips/data.json'),
-		welcome: require('./gettingstarted/data.json')
+		welcome: require('./gettingstarted/data.json'),
+		whatsnew: require('./whatsnew/data.json')
 	}
 
 	options = {
@@ -173,6 +174,7 @@ gulp.task 'watch', ->
 	gulp.watch paths.handlebars, ['html']
 	gulp.watch paths.sass, ['sass']
 	gulp.watch paths.images, ['images']
+	gulp.watch "{tips/**/*,gettingstarted/**/*,whatsnew/**/*}", ['html']
 
 gulp.task 'set-production', ->
 	config.production = true
