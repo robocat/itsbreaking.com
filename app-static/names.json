@@ -19,5 +19,14 @@
   "http://www.cultofmac.com/feed/": "Cult of Mac",
   "http://feeds.gawker.com/gizmodo/full": "Gizmodo",
   "http://www.theguardian.com/world/rss": "The Guardian",
-  "http://feeds.mashable.com/Mashable": "Mashable"
+  "http://feeds.mashable.com/Mashable": "Mashable",
+  "https://news.ycombinator.com": "Hacker News",
+  "https://www.designernews.co": "Designer News",
+  "http://devour.com": "Devour",
+  "https://dribbble.com": "Dribbble",
+  "http://xkcd.com": "XKCD",
+  "http://www.youtube.com/feeds/videos.xml?channel_id=UCUHW94eEFW7hkUMVaZz4eDg": "MinutePhysics",
+  "http://www.polygon.com/rss/index.xml": "Polygon",
+  "http://producthunt.com/": "Product Hunt",
+  "http://www.wsj.com/xml/rss/3_7085.xml": "The Wall Street Journal"
 }
