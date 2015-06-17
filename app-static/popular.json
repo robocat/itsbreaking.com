@@ -37,7 +37,7 @@
   },
   {
     "hits": 130,
-    "url": "https://news.ycombinator.com"
+    "url": "https://news.ycombinator.com/rss"
   },
   {
     "hits": 129,
@@ -49,11 +49,11 @@
   },
   {
     "hits": 127,
-    "url": "https://dribbble.com"
+    "url": "https://dribbble.com/rss/shots.rss"
   },
   {
     "hits": 126,
-    "url": "http://xkcd.com"
+    "url": "http://xkcd.com/atom.xml"
   },
   {
     "hits": 125,

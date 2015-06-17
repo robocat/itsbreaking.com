@@ -20,13 +20,16 @@
   "http://feeds.gawker.com/gizmodo/full": "Gizmodo",
   "http://www.theguardian.com/world/rss": "The Guardian",
   "http://feeds.mashable.com/Mashable": "Mashable",
-  "https://news.ycombinator.com": "Hacker News",
+  "https://news.ycombinator.com/rss": "Hacker News",
   "https://www.designernews.co": "Designer News",
   "http://devour.com": "Devour",
-  "https://dribbble.com": "Dribbble",
-  "http://xkcd.com": "XKCD",
+  "https://dribbble.com/rss/shots.rss": "Dribbble",
+  "http://xkcd.com//atom.xml": "XKCD",
   "http://www.youtube.com/feeds/videos.xml?channel_id=UCUHW94eEFW7hkUMVaZz4eDg": "MinutePhysics",
   "http://www.polygon.com/rss/index.xml": "Polygon",
-  "http://producthunt.com/": "Product Hunt",
-  "http://www.wsj.com/xml/rss/3_7085.xml": "The Wall Street Journal"
+  "http://producthunt.com/feed": "Product Hunt",
+  "http://www.wsj.com/xml/rss/3_7085.xml": "The Wall Street Journal",
+  "http://ax.itunes.apple.com/WebObjects/MZStore.woa/wpa/MRSS/newreleases/limit=10/rss.xml": "iTunes 10 New Releases",
+  "http://feeds.feedburner.com/blogmacmagazine": "MacMagazine",
+  "https://www.producthunt.com/feed": "Product Hunt"
 }
