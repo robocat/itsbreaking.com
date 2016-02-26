@@ -1,20 +1,18 @@
 s3_id: <%= ENV['S3_ACCESS_KEY_ID'] %>
 s3_secret: <%= ENV['S3_SECRET_ACCESS_KEY'] %>
-s3_bucket: itsbreaking.com
-
-cloudfront_distribution_id: EWSSFTJSLFQ91
+s3_bucket: web.itsbreaking.com
+cloudfront_distribution_id: E2UDD4V7DBVQ30
 
 site: public
 
-max_age:
-    "*": 300
-
+max_age: 300
 gzip: true
 
 ignore_on_server: downloads
 
 cloudfront_distribution_config:
     aliases:
-        quantity: 1
+        quantity: 2
         items:
-            CNAME: itsbreaking.com
+            CNAME0: itsbreaking.com
+            CNAME1: www.itsbreaking.com
