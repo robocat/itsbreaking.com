@@ -1,3 +1,12 @@
+// Returns path for image-url
+$image-path: '/images/' !default;
+
+@if not function-exists(image-url) {
+  @function image-url($filename) {
+    @return url('#{$image-path}#{$filename}');
+  }
+}
+
 @include keyframes(slideIn) {
 	from {
 		box-shadow: none;
